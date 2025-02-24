@@ -1,0 +1,7 @@
+body {
+  font-family: sans-serif;
+}
+
+.only-in-readme {
+  display: none; !important;
+}
