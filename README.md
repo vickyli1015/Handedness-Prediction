@@ -1,2 +1,11 @@
-# DSC_Capstone_Website
-This repo is for the website of the capstone course DSC 180B @ UCSD
+# Predicting Handedness with Resting-State fMRI
+#### By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabriel Riegner
+
+
+# Introduction
+
+# Methods
+
+# Results 
+
+# Conclusion
