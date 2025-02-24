@@ -11,4 +11,4 @@ By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabri
 
 ## Conclusion
 
-<!-- Link to our website: https://vickyli1015.github.io/Handedness-Prediction/ -->
+Link to our website: https://vickyli1015.github.io/Handedness-Prediction/ 
