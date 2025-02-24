@@ -3,10 +3,10 @@
 By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabriel Riegner
 
 
-# Introduction
+## Introduction
 
-# Methods
+## Methods
 
-# Results 
+## Results 
 
-# Conclusion
+## Conclusion
