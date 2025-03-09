@@ -167,7 +167,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <table>
       <tr>
           <th>Dataset</th>
-          <th>Edges</th>
+          <th>Number of Edges</th>
           <th>k</th>
           <th>RMSE</th>
       </tr>
