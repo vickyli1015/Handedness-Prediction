@@ -69,7 +69,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <h2>Methods</h2
 
-I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster.
+<p>I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster. (will be remove in final version)</p>
 
 
     <p>Handedness can be viewed as binary, left or right-handed, as well as continuous based on the Edinburgh Handedness Index. This led us to explore two types of models: regression and classification.</p>
