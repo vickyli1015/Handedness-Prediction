@@ -25,7 +25,7 @@ The ICA parcellated regions combine the brain activity from both hemispheres, th
 
 From the same study, we used restricted data on handedness. Handedness is assessed using the Edinburgh Handedness Inventory (EHI) which ranges from -100 to 100. We used 0 as the threshold, to maximize the number of right and left-handed people and leave out a minimal number of samples. Negative values correspond with left-handedness (less than zero), while positive values correspond with right-handedness (greater than zero). People who received zero on the handedness scale are considered ambidextrous. The handedness index is derived by answering a questionnaire which asks participants which hand they use to perform different tasks such as:
 
-<h2>· Doing Fine Motor Tasks:  writing, drawing, throwing, threading a needle, etc.</h2>
+<p>· Doing Fine Motor Tasks:  writing, drawing, throwing, threading a needle, etc.</p>
 
 · Using Eating & Kitchen Tools:  Knife (without fork), Spoon, Knife with fork
 
