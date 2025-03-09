@@ -246,8 +246,10 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   </table>
   
   <h4>Key Regions for Classification</h4>
-  <p>CA data: <img src="brain_plot_1.png" alt="">Matched ICA. In the matched ICA result, the centroids of the regions important for classification tend to be towards the back in the cerebellum and occipital regions.</p>
-  <p><img src="brain_plot_2.png" alt="">All ICA. In all ICA data, the regions are present more evenly spread out throughout the brain, however, there does seem to be a cluster towards the back of the brain.</p>
+  <p>CA data: <img src="brain_plot_1.png" alt=""></p>
+  <p>Matched ICA. In the matched ICA result, the centroids of the regions important for classification tend to be towards the back in the cerebellum and occipital regions.</p>
+  <p><img src="brain_plot_2.png" alt=""></p>
+  <p>All ICA. In all ICA data, the regions are present more evenly spread out throughout the brain, however, there does seem to be a cluster towards the back of the brain.</p>
 
   <p>These regions are harder to visualize in the CA data, since some of them are subcortical, the cortical regions look as follows:
 </p>
