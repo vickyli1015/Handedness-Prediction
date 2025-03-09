@@ -158,7 +158,8 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>The goal of this function was to maximize the balanced accuracy of the model as well as maximize the threshold. This way we are searching for the minimal number of edges while still achieving maximum accuracy. Once we selected the threshold, we filtered the features such that only one feature from every cluster is included in the model. Then, permutation testing was conducted to assess how significantly each feature affects the model. The permutation test shuffles the values of a specific feature, and assesses by how much the model performance decreased on average across multiple iterations. Through these processes we were able to assess  which brain regions most significantly impact the performance of our model.</p>
     
 <h3>Regression</h3>
-  <p>For regression, we aimed to predict handedness as a continuous variable ranging from -100 to +100. The evaluation technique used was Root Mean Squared Error (RMSE).</p>
+  <p>For regression, we aimed to predict handedness as a continuous variable ranging from -100 to +100 using connectivity features. Same as with classification the inputs into our model were the edge values across all subjects. We used a model that always predicts mean as our baseline. We use the evaluation technique of Root Mean Squared Error (RMSE) , which is the square root of the mean squared difference between true and predicted values. We looked for an RMSE lower than the baseline model when creating new models.
+</p>
     
   <h4>K-Nearest Neighbors Regressor</h4>
   <p>We started by applying the K-Nearest Neighbors Regressor. Similar to classification, we performed grid search to look for the optimal numberof  edges and k values to include in our model.
