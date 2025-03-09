@@ -3,7 +3,7 @@ name: Deploy Jekyll Site
 on:
   push:
     branches:
-      - main  # Change if your branch is different
+      - main  # Change if using a different branch
 
 jobs:
   build:
@@ -18,6 +18,6 @@ jobs:
           source: .  # Ensures it builds from your root directory
 
       - name: Deploy to GitHub Pages
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
