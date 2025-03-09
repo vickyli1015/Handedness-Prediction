@@ -123,7 +123,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>where the kernel coefficient $\alpha$ controls the influence of each training sample on the decision boundary and is the bias term $c$ that shifts the data up or down.
 </p>
 
-  <p>In the sigmoid kernel, the similarity between two data points is computed using the hyperbolic tangent function ($tanh$). The kernel function scales and possibly shifts the dot product of the two points ($x$ and $y$).
+  <p>In the sigmoid kernel, the similarity between two data points is computed using the hyperbolic tangent function (`tanh`). The kernel function scales and possibly shifts the dot product of the two points (`x` and `y`).
 </p>
   
   <p>After testing different kernels, the sigmoid kernel was chosen for stability.</p>
