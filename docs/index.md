@@ -1,6 +1,7 @@
 <h1>Predicting Handedness with Resting-State fMRI</h1>
   
-By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabriel Riegner
+By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; 
+Mentors: Armin Schwartzman, Gabriel Riegner
 
 
 <h2>Introduction</h2>
@@ -8,22 +9,43 @@ By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabri
 Lateralization refers to the specialization of certain brain functions to specific hemispheres, with handedness being one of the most well-documented examples. Brain activity during task-based experiments, such as language tasks, has exhibited strong lateralization patterns correlated with handedness (Pujol et al., 1999). Right-handed individuals make up approximately 90% of the population, while left-handed individuals account for only 10% (Coren & Porac, 1977). Given this distribution, much of the existing research focuses on right-handed individuals, and this could lead to generalized assumptions that may not fully capture differences for left-handed individuals.
 As a result, our problem statement is: Do significant brain asymmetries, which influence lateralization and handedness, only emerge in task-based conditions, or can they also be detected in resting-state functional connectivity? With machine learning techniques, we aim to classify individuals as left- or right-handed based solely on their resting-state fMRI signals. While previous studies have investigated this classification, we will investigate functional connectivity on data that reflect hemispheric separations and data that doesn’t. Our goal is to build upon existing findings, assess whether resting-state connectivity alone can predict handedness, and how big of a role connectivity between hemispheres plays in these predictions.
 
+Have you ever wondered if your brain "knows" whether you're left-handed or right-handed—without you even moving a finger? Turns out, it might!
+
+Most research on handedness (which hand you prefer to use) looks at how the brain works during tasks, like writing or grabbing an object (Pujol et al., 1999). But what if we could predict handedness just from brain activity when you're doing nothing at all?
+
+That’s exactly what we set out to explore! Using resting-state fMRI (a brain scan taken while people are simply lying still), we applied machine learning to see if brain connectivity alone can reveal whether someone is left- or right-handed.
+
+We also wanted to dig deeper:
+
+<p> Can certain brain regions tell us more about handedness than others? </p>
+<p>· Does communication between the two hemispheres play a role? </p>
+<p>· And most importantly—how well can a computer predict handedness from brain connections alone? </p>
+
 <h2>Data</h2>
 
-We used the resting-state fMRI data from the Human Connectome Project (HCP). Since our main focus was on connectivity patterns between brain regions over time, we selected the “HCP_PTN1200” dataset, which captured brain activity and regional connectivity represented across time.
-Each subject’s data consisted of a single file containing 4,800 time points, representing one hour of resting-state brain activity. This hour of data was divided into four 15-minute rfMRI sessions, equivalent to 1,200 time points per 15-minute scan. The datasets included brain activity data across various numbers of regions, ranging from 15 to 300 brain regions. Each region’s activity was represented as a continuous time series, and more regions provided finer details. Each region was determined by applying Independent Component Analysis (ICA) to the signal. Every region contains the signal that is independent of all other regions’ signals. Because ICA was used to divide the regions, the regions are not anatomically divided. Additionally, one region may span across multiple hemispheres and even appear as more than one cluster in the brain. We use 300 brain regions for 1,003 subjects in order to have a similar number of regions to the data where the regions are separated by hemispheres. We will use “All ICA Data” to refer to this whole set of data of 1003 subjects across 300 regions. 
+We used brain scan data from the Human Connectome Project (HCP), which has fMRI recordings from 1003 subjects. Each person’s scan captured one hour of brain activity while they were at rest—no thinking, no moving, just the brain doing its thing.
 
-The ICA parcellated regions combine the brain activity from both hemispheres, therefore it may capture less patterns related to lateralization that are necessary for predicting handedness. We  extracted cortical and subcortical regions, 712 subcortical regions, 356 per hemisphere, using the Cole-Anticevic Brain-wide Network (CA) Parcellation. There are 3,600 time points for each of the brain regions. All of this data was extracted and preprocessed by our TA Gabriel Riegner, and we will refer to the 165-subject dataset with CA parcellation as “CA Data”. In addition, we compared the influence of hemispheric division in the data, we also generated a dataset consisting of the same 165 subjects in the CA Dataset but with the original ICA data across 300 regions, which we will refer to by “ICA Matched Data”.
+<h3>How is the brain data organized?<h3>
+Imagine the brain as a giant network of interconnected regions. We studied two different ways to divide it:
 
-From the same study, we used restricted data on handedness. Handedness is assessed using the Edinburgh Handedness Inventory (EHI) which ranges from -100 to 100. We used 0 as the threshold, to maximize the number of right and left-handed people and leave out a minimal number of samples. Negative values correspond with left-handedness (less than zero), while positive values correspond with right-handedness (greater than zero). People who received zero on the handedness scale are considered ambidextrous. The handedness index is derived by answering a questionnaire which asks participants which hand they use to perform different tasks such as:
+1. ICA Parcellation (300 Regions):
+Groups brain activity based on signal patterns, not physical location.
+Regions might spread across both hemispheres.
+Useful for broad connectivity patterns.
+2. CA Parcellation (718 Regions):
+Separates the brain into specific anatomical areas (left vs. right hemisphere).
+Helps study how connectivity between hemispheres affects handedness.
+To understand handedness, we used scores from the Edinburgh Handedness Inventory (EHI), a questionnaire that asks about daily tasks like writing, throwing, and using utensils.
 
-<p>· Doing Fine Motor Tasks:  writing, drawing, throwing, threading a needle, etc.</p>
+A score above 0 means right-handed ✍️
+A score below 0 means left-handed 🖊️
+A score of 0? Ambidextrous! 🎭
+Balancing the Data ⚖️
+There’s a catch: Most people (about 90%) are right-handed, which makes lefties a rare find in our dataset.
 
-<p>· Using Eating & Kitchen Tools:  Knife (without fork), Spoon, Knife with fork</p>
-
-When we split data into left and right-handed people, we discovered that our data consists of 12 left-handed people and 153 right-handed people for CA Data and ICA Matched Data. In all ICA data, there are 912 right-handed people, 88 left-handed people, and 3 ambidextrous persons.
-
-
+ICA Data (All subjects): 912 righties, 88 lefties, 3 ambidextrous
+CA Data (Subset of 165 subjects): 12 lefties, 153 righties
+To prevent our machine learning models from being biased toward right-handers, we used a technique called SMOTE (Synthetic Minority Oversampling Technique) to create synthetic left-handed data points based on real ones—helping balance things out for fairer predictions.
 
 <h2>Methods</h2>
 
