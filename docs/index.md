@@ -3,12 +3,12 @@
 By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; Mentors: Armin Schwartzman, Gabriel Riegner
 
 
-## Introduction
+<h2>Introduction</h2>
 
 Lateralization refers to the specialization of certain brain functions to specific hemispheres, with handedness being one of the most well-documented examples. Brain activity during task-based experiments, such as language tasks, has exhibited strong lateralization patterns correlated with handedness (Pujol et al., 1999). Right-handed individuals make up approximately 90% of the population, while left-handed individuals account for only 10% (Coren & Porac, 1977). Given this distribution, much of the existing research focuses on right-handed individuals, and this could lead to generalized assumptions that may not fully capture differences for left-handed individuals.
 As a result, our problem statement is: Do significant brain asymmetries, which influence lateralization and handedness, only emerge in task-based conditions, or can they also be detected in resting-state functional connectivity? With machine learning techniques, we aim to classify individuals as left- or right-handed based solely on their resting-state fMRI signals. While previous studies have investigated this classification, we will investigate functional connectivity on data that reflect hemispheric separations and data that doesn’t. Our goal is to build upon existing findings, assess whether resting-state connectivity alone can predict handedness, and how big of a role connectivity between hemispheres plays in these predictions.
 
-### Literature Review
+<h2>Literature Review</h2>
 
 Previous studies in rfMRI were able to identify motor systems, specifically primary motor cortex (M1), supplementary motor system (SMA) and dorsolateral premotor cortex (PMd), as key features in handedness classification. (Eva-Maria Pool et al., 2015). These researchers were able to reach an  accuracy of around 86%. Using these regions as seed regions to derive correlation with the rest of the regions. This study had only 18 right and 18 left hand participants, so although they were successful, it is unclear how generalizable this would be to a larger dataset. They tested that motor regions are the ones that are predicting handedness by testing visual and auditory regions as well. They showed that the inferior frontal gyrus as seed region does not have significant differences between left and right handed people. Similarly, visual cortex correlations did not show significant differences between left and right handed people. Their high accuracy could be linked with the fact that it was shown that right-handed people had a stronger interhemispheric link between M1 and PMd compared to left-handed people. This study showed that the connections between hemispheres are important. We wanted to explore if these results would persist on the data where the brain regions span across both hemispheres, showing that perhaps the largest connectivity patterns are at play.
 
@@ -16,7 +16,7 @@ While Pool et al. (2015) focused on motor-related regions in classifying handedn
 
 As research has expanded beyond motor regions to explore network-level differences in handedness, new computational approaches have emerged to better capture the complexity of brain connectivity patterns. Meszlényi et al. (2017) explored deep learning methods for decoding individual brain states from resting-state fMRI (rs-fMRI), demonstrating that CNNs outperform traditional machine learning models by capturing complex spatial patterns in functional connectivity matrices. While their study focused on general brain state classification, their work did not address handedness prediction specifically since their goal was to predict Autism. They did not consider class imbalance issues, which are crucial in our dataset where left-handed individuals are underrepresented. While other prior research mostly focused on linear models, such as SVM with a linear kernel, this paper showcased that perhaps non linear models are able to pick up trends not accessible with linear relationships in the brain data.
 
-## Data
+<h2>Data</h2>
 
 We used the resting-state fMRI data from the Human Connectome Project (HCP). Since our main focus was on connectivity patterns between brain regions over time, we selected the “HCP_PTN1200” dataset, which captured brain activity and regional connectivity represented across time.
 Each subject’s data consisted of a single file containing 4,800 time points, representing one hour of resting-state brain activity. This hour of data was divided into four 15-minute rfMRI sessions, equivalent to 1,200 time points per 15-minute scan. The datasets included brain activity data across various numbers of regions, ranging from 15 to 300 brain regions. Each region’s activity was represented as a continuous time series, and more regions provided finer details. Each region was determined by applying Independent Component Analysis (ICA) to the signal. Every region contains the signal that is independent of all other regions’ signals. Because ICA was used to divide the regions, the regions are not anatomically divided. Additionally, one region may span across multiple hemispheres and even appear as more than one cluster in the brain. We use 300 brain regions for 1,003 subjects in order to have a similar number of regions to the data where the regions are separated by hemispheres. We will use “All ICA Data” to refer to this whole set of data of 1003 subjects across 300 regions. 
@@ -33,8 +33,10 @@ When we split data into left and right-handed people, we discovered that our dat
 
 
 
-## Methods
+<h2>Methods</h2>
 
-## Results 
+<h2>Results</h2>
 
-## Conclusion
+<h2>Conclusion</h2>
+
+<h2>Reference</h2>
