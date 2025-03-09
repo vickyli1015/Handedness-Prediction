@@ -27,7 +27,6 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 <h3>How is the brain data organized?</h3>
 <p>Imagine the brain as a giant network of interconnected regions. We studied two different ways to divide it:</p>
 
-<ul>
   <li><b>ICA Parcellation (300 Regions):</b>
     <ul>
       <li>Groups brain activity <b>based on signal patterns</b>, not physical location.</li>
@@ -36,9 +35,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
       <li> here we can put the interative plot/plot that show how ICA parcellation look like
     </ul>
   </li>
-</ul>
 
-<ul>
   <li><b>CA Parcellation (718 Regions):</b>
     <ul>
       <li>Divides the brain into <b>specific anatomical areas</b> (left vs. right hemisphere).</li>
@@ -46,7 +43,6 @@ Mentors: Armin Schwartzman, Gabriel Riegner
       <li>here we can put the interative plot/plot that show how CA parcellation look like</li>
     </ul>
   </li>
-</ul>
 
 <h3>How do we measure handedness?</h3>
 <p>We used the <b>Edinburgh Handedness Inventory (EHI)</b>, a questionnaire that asks about daily tasks like writing, throwing, and using utensils.</p>
