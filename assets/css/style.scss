@@ -1,0 +1,35 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: 'Arial', sans-serif;
+
+// Base styles
+body {
+  font-family: $font-stack;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: $primary-color;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-color;
+}
+
+a:hover {
+  color: darken($secondary-color, 10%);
+}
+
+// Additional example
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
