@@ -204,21 +204,21 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <h2>Results</h2>
 
-<h2>Classification</h2>
+<h3>Classification</h3>
     <p>We employed all the models to the three datasets: All ICA, Matched ICA, and CA. We ran each model 500 times on different train-test splits to ensure consistent results.</p>
     
-    <h3>Comparison of Classification Models</h3>
+    <h4>Comparison of Classification Models</h4>
     <p><img src="images/classification_comparison.png" alt="Classification Model Comparison"></p>
     
     <p>On All ICA data, the KNN model slightly outperformed the SVC model with an average balanced accuracy of 0.95 compared to 0.94 for SVC. Both models significantly outperformed the baseline. On Matched ICA data, both KNN and SVC achieved 100% balanced accuracy. For the CA dataset, which separated data by hemispheres and included subcortical regions, both models performed similarly with 99% balanced accuracy.</p>
     
-    <h3>Effect of Edge Count on Performance</h3>
+    <h4>Effect of Edge Count on Performance</h4>
     <p>We examined how the number of edges affected performance. CA performed better with fewer edges compared to Matched ICA. Matched ICA caught up and eventually outperformed CA, but over time, both datasets performed similarly.</p>
     
-    <h3>Feature Selection</h3>
+    <h4>Feature Selection</h4>
     <p>To better understand why the models performed well, we conducted hierarchical clustering and permutation testing to identify the most important features.</p>
     
-    <h3>Results After Hierarchical Clustering & Permutation Testing</h3>
+    <h4>Results After Hierarchical Clustering & Permutation Testing</h4>
     <table>
         <tr>
             <th>Number of Edges</th>
@@ -238,13 +238,13 @@ Mentors: Armin Schwartzman, Gabriel Riegner
         </tr>
     </table>
     
-    <h3>Key Regions for Classification</h3>
+    <h4>Key Regions for Classification</h4>
     <p>CA data: <img src="images/ca_regions.png" alt="CA Regions"></p>
     <p>Matched ICA data: The important regions are centered towards the back in the cerebellum and occipital regions.</p>
     <p>All ICA data: The regions are more evenly spread throughout the brain, but with a cluster towards the back.</p>
     <p><img src="images/brain_views.png" alt="Brain Region Views"></p>
     
-    <h2>Regression Model</h2>
+    <h3>Regression Model</h3>
     <p>Our regression models showed varied results. Spectral Embedding and KNN Regressor performed well on Matched ICA and CA datasets, with comparable performance. Both models performed slightly better on the CA dataset than Matched ICA. However, both models barely outperformed the baseline on the All ICA dataset, indicating poor performance.</p>
 
 
