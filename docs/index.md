@@ -8,18 +8,17 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <p>Have you ever wondered if your brain “knows” whether you’re left-handed or right-handed—without you even moving a finger? Turns out, it might!</p>
 
-<p>Most research on handedness looks at brain activity during <b>task-based experiments</b> (like writing or grabbing an object). But what if we could predict handedness <b>just from brain activity when you’re doing nothing at all</b>? That’s exactly what we set out to explore.</p>
+<p>Most research on handedness looks at brain activity during <b>task-based experiments</b> (like writing or grabbing an object) (put reference here!). But what if we could predict handedness <b>just from brain activity when you’re doing nothing at all</b>? That’s exactly what we set out to explore.</p>
 
 <p>Using <b>resting-state fMRI</b> (a brain scan taken while people are simply lying still), we applied <b>machine learning</b> to see if brain connectivity alone can reveal whether someone is left- or right-handed.</p>
 
-<h3>What are we trying to find out?</h3>
+<h3>Using machine learning models, we investigated:</h3>
 <ul>
-  <li>Can certain brain regions tell us more about handedness than others?</li>
-  <li>Does communication <b>between</b> the two hemispheres play a role?</li>
-  <li>How well can a computer predict handedness based on functional connectivity?</li>
+  <li>Whether functional brain connectivity patterns differ between left- and right-handed individuals</li>
+  <li>The role of interhemispheric connectivity in these predictions</li>
+  <li>How well different machine learning models perform in classifying or predicting handedness based on brain connectivity</li>
 </ul>
 
-<p>Let’s dive in and find out! 🚀</p>
 <hr>
 
 <h2>Data</h2>
@@ -34,12 +33,14 @@ Mentors: Armin Schwartzman, Gabriel Riegner
       <li>Groups brain activity <b>based on signal patterns</b>, not physical location.</li>
       <li>Regions might spread across both hemispheres.</li>
       <li>Useful for broad connectivity patterns.</li>
+      <li> here we can put the interative plot/plot that show how ICA parcellation look like
     </ul>
   </li>
   <li><b>CA Parcellation (718 Regions):</b>
     <ul>
       <li>Divides the brain into <b>specific anatomical areas</b> (left vs. right hemisphere).</li>
       <li>Helps study how connectivity between hemispheres affects handedness.</li>
+      <li>here we can put the interative plot/plot that show how CA parcellation look like</li>
     </ul>
   </li>
 </ul>
@@ -52,15 +53,15 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <li><b>Score = 0:</b> Ambidextrous </li>
 </ul>
 
-<h3>Balancing the Data ⚖️</h3>
-<p>There’s a catch: Most people (about <b>90%</b>) are right-handed, which makes lefties <b>a rare find</b> in our dataset.</p>
+<h3>Balancing the Data ⚖</h3>
+<p>There’s a catch: Most people (about <b>90%</b>) (we need reference here!) are right-handed, which makes lefties <b>a rare find</b> in our dataset.</p>
 
 <ul>
-  <li><b>ICA Data (All subjects):</b> 912 righties, 88 lefties, 3 ambidextrous</li>
-  <li><b>CA Data (Subset of 165 subjects):</b> 12 lefties, 153 righties</li>
+  <li><b>ICA Data (All subjects):</b> 88 left-handers, 912 right-handers, 3 ambidextrous</li>
+  <li><b>CA Data (Subset of 165 subjects):</b> 12 left-handers, 153 right-handers</li>
 </ul>
 
-<p>To prevent our machine learning models from being biased toward right-handers, we used a technique called <b>SMOTE (Synthetic Minority Oversampling Technique)</b> to create <b>synthetic left-handed data points</b> based on real ones—helping balance things out for fairer predictions.</p>
+<p>To prevent our machine learning models from being biased toward right-handers, we used a technique called <b>SMOTE (Synthetic Minority Oversampling Technique)</b> to create <b>synthetic left-handed data points</b> based on the real data points to generate synthetic samples for the minority class to improve model balance and performance. </p>
 
 <h2>Methods</h2>
 
