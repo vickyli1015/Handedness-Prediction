@@ -67,7 +67,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <hr>
 
-<h2>Methods</h2
+<h2>Methods</h2>
 
 <p>I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster. (will be remove in final version)</p>
 
