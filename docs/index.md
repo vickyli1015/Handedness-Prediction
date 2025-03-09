@@ -117,9 +117,9 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   
 <h4>Support Vector Classifier (SVC)</h4>
   <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying <b>linear</b>, <b>poly</b>, <b>rbf</b>, <b>sigmoid</b> kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
-
+  <p align="center">
   <img src="knn.png" alt="">
-
+  </p>
 
   <p>where the kernel coefficient `alpha` controls the influence of each training sample on the decision boundary and is the bias term <b>c</b> that shifts the data up or down.
 </p>
@@ -154,7 +154,9 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>When analyzing the performance, we ran each model 500 times on different train-test splits to make sure that our results are consistent. We will be reporting average balanced accuracy across 500 trials in our results.</p>
   <p>In order to achieve a greater level of explainability, since the sigmoid kernel is hard to interpret, permutation testing was conducted to evaluate the importance of each feature passed into the model. We first conducted hierarchical clustering to filter out features that are correlated with each other, and reduce multicollinearity within the dataset. First, we extracted our features, which are the values of the edges across all subjects. Then, we compute Spearman correlation between multiple edges. Spearman correlation assesses whether the relationship between two variables can be described using a monotonic function, a function that preserves or reverses the order of the given order. This will help us reduce the number of input edges, since many of them follow the same pattern. Then, the distance matrix is computed using 1 - abs(corr), such that if the spearman correlation coefficient was high, close to 1 or -1, the distance would be small, close to 0. Then, we use Ward's method for hierarchical clustering, which minimizes the variance within clusters. In order to appropriately threshold hierarchical clustering, we computed a grid search using the following objective function. </p>
 
-  <iframe src="svc.png" width=836 height=114 frameBorder=0></iframe>
+  <p align="center">
+  <img src="svc.png" alt="">
+  </p>
 
 
   <p>The goal of this function was to maximize the balanced accuracy of the model as well as maximize the threshold. This way we are searching for the minimal number of edges while still achieving maximum accuracy. Once we selected the threshold, we filtered the features such that only one feature from every cluster is included in the model. Then, permutation testing was conducted to assess how significantly each feature affects the model. The permutation test shuffles the values of a specific feature, and assesses by how much the model performance decreased on average across multiple iterations. Through these processes we were able to assess  which brain regions most significantly impact the performance of our model.</p>
