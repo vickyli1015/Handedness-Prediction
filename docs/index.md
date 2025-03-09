@@ -116,14 +116,14 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   </table>
   
 <h4>Support Vector Classifier (SVC)</h4>
-  <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’ kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
+  <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying <b>linear</b>, <b>poly</b>, <b>rbf</b>, <b>sigmoid</b> kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
 
   \\( K(x,y) = \tanh(\alpha \cdot x^T y + c) \\)
 
-  <p>where the kernel coefficient `alpha` controls the influence of each training sample on the decision boundary and is the bias term `c` that shifts the data up or down.
+  <p>where the kernel coefficient `alpha` controls the influence of each training sample on the decision boundary and is the bias term <b>c</b> that shifts the data up or down.
 </p>
 
-  <p>In the sigmoid kernel, the similarity between two data points is computed using the hyperbolic tangent function `tanh`. The kernel function scales and possibly shifts the dot product of the two points `x` and `y`.
+  <p>In the sigmoid kernel, the similarity between two data points is computed using the hyperbolic tangent function <b>tanh</b>. The kernel function scales and possibly shifts the dot product of the two points <b>x</b> and <b>y</b>.
 </p>
   
   <p>After testing different kernels, the sigmoid kernel was chosen for stability.</p>
@@ -158,11 +158,11 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>The goal of this function was to maximize the balanced accuracy of the model as well as maximize the threshold. This way we are searching for the minimal number of edges while still achieving maximum accuracy. Once we selected the threshold, we filtered the features such that only one feature from every cluster is included in the model. Then, permutation testing was conducted to assess how significantly each feature affects the model. The permutation test shuffles the values of a specific feature, and assesses by how much the model performance decreased on average across multiple iterations. Through these processes we were able to assess  which brain regions most significantly impact the performance of our model.</p>
     
 <h3>Regression</h3>
-  <p>For regression, we aimed to predict handedness as a continuous variable ranging from -100 to +100 using connectivity features. Same as with classification the inputs into our model were the edge values across all subjects. We used a model that always predicts mean as our baseline. We use the evaluation technique of Root Mean Squared Error (RMSE) , which is the square root of the mean squared difference between true and predicted values. We looked for an RMSE lower than the baseline model when creating new models.
+  <p>For regression, we aimed to predict handedness as a continuous variable ranging from -100 to +100 using connectivity features. Same as with classification, the inputs into our model were the edge values across all subjects. We used a model that always predicts the mean as our baseline. We use the evaluation technique of Root Mean Squared Error (RMSE), which is the square root of the mean squared difference between true and predicted values. We looked for an RMSE lower than the baseline model when creating new models.
 </p>
     
   <h4>K-Nearest Neighbors Regressor</h4>
-  <p>We started by applying the K-Nearest Neighbors Regressor. Similar to classification, we performed grid search to look for the optimal numberof  edges and k values to include in our model.
+  <p>We started by applying the K-Nearest Neighbors Regressor. Similar to classification, we performed grid search to look for the optimal number of  edges and k values to include in our model.
 </p>
   <table>
       <tr>
