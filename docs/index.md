@@ -65,14 +65,22 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <p>To prevent our machine learning models from being biased toward right-handers, we used a technique called <b>SMOTE (Synthetic Minority Oversampling Technique)</b> to create <b>synthetic left-handed data points</b> based on the real data points to generate synthetic samples for the minority class to improve model balance and performance. </p>
 
+<hr>
+
 <h2>Methods</h2>
 
 I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster.
+
+<hr>
 
 <h2>Results</h2>
 
 We can have the plots from the poster
 
+<hr>
+
 <h2>Conclusion</h2>
+
+<hr>
 
 <h2>Reference</h2>
