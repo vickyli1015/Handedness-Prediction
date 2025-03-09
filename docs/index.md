@@ -119,7 +119,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying <b>linear</b>, <b>poly</b>, <b>rbf</b>, <b>sigmoid</b> kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
 
   <p align="center">
-  <img src="https://github.com/vickyli1015/Handedness-Prediction/blob/main/images/knn.png">
+  <img src="knn.png">
   </p>
 
 
@@ -157,7 +157,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>In order to achieve a greater level of explainability, since the sigmoid kernel is hard to interpret, permutation testing was conducted to evaluate the importance of each feature passed into the model. We first conducted hierarchical clustering to filter out features that are correlated with each other, and reduce multicollinearity within the dataset. First, we extracted our features, which are the values of the edges across all subjects. Then, we compute Spearman correlation between multiple edges. Spearman correlation assesses whether the relationship between two variables can be described using a monotonic function, a function that preserves or reverses the order of the given order. This will help us reduce the number of input edges, since many of them follow the same pattern. Then, the distance matrix is computed using 1 - abs(corr), such that if the spearman correlation coefficient was high, close to 1 or -1, the distance would be small, close to 0. Then, we use Ward's method for hierarchical clustering, which minimizes the variance within clusters. In order to appropriately threshold hierarchical clustering, we computed a grid search using the following objective function. </p>
 
   <p align="center">
-  <img src="../images/svc.png">
+  <img src="svc.png">
   </p>
 
 
