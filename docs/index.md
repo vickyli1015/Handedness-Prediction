@@ -37,6 +37,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
     </ul>
   </li>
 </ul>
+
 <ul>
   <li><b>CA Parcellation (718 Regions):</b>
     <ul>
