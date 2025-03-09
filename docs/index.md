@@ -81,7 +81,11 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 <h3>Classification</h3>
   <p>For classification, we used a model that always predicts mode as our baseline. The balanced accuracy score was used for evaluation, with a baseline score of 0.5.</p>
     
-  <p>Since left-handed people make up less than 10% of our dataset, we used the Synthetic Minority Oversampling Technique (SMOTE) to rebalance the dataset.</p>
+  <p>Since left-handed people make up less than 10% of our dataset, we used the Synthetic Minority Oversampling Technique (SMOTE) to rebalance the dataset. This technique uses a nearest neighbors approach. It takes a point, finds k nearest neighbors, randomly selects one of the nearest neighbors, and adds a point on the linear path between our point and the random neighbor we chose. We then separate our balanced dataset into 25% test and 75% train sets. </p>
+
+  <p>We implemented K-Nearest Neighbors (KNN) classifiers first, and performed grid search to identify the hyperparameters which correspond to the best balanced accuracy score. 
+</p>
+
     
 <h4>K-Nearest Neighbors (KNN) Classifier</h4>
   <table>
@@ -110,7 +114,9 @@ Mentors: Armin Schwartzman, Gabriel Riegner
           <td>0.95</td>
       </tr>
   </table>
-    
+
+  <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’ kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
+  
 <h4>Support Vector Classifier (SVC)</h4>
   <p>After testing different kernels, the sigmoid kernel was chosen for stability.</p>
   <table>
