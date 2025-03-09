@@ -69,12 +69,14 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <h2>Methods</h2>
 
-  <p>I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster. (will be remove in final version)</p>
+  <p>I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster. (will be removed in final version)</p>
 
 
   <p>Handedness can be viewed as binary, left or right-handed, as well as continuous based on the Edinburgh Handedness Index. This led us to explore two types of models: regression and classification.</p>
     
   <p>Both models utilize functional connectivity, which we calculated through partial correlation matrices for each subject. For the CA data, the correlation matrix was 718 by 718, corresponding to all possible pairs between 718 regions. For the All ICA and Matched ICA data, the correlation matrices were 300 by 300, corresponding to 300 regions used. We applied Fisher Z-transformation to normalize the correlations.</p>
+
+  <p>Every value inside the correlation matrix is the correlation between two brain regions which forms an edge. We can now think of every value in the correlation matrix representing an edge. We computed the correlation between a particular edge across all subjects and the corresponding handedness scores. Top n number of absolute strongest correlations were used as inputs into the model. The appropriate number of n edges was selected via grid search. </p>
     
 <h3>Classification</h3>
   <p>For classification, we used a model that always predicts mode as our baseline. The balanced accuracy score was used for evaluation, with a baseline score of 0.5.</p>
