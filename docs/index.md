@@ -119,7 +119,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying <b>linear</b>, <b>poly</b>, <b>rbf</b>, <b>sigmoid</b> kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
 
   <p align="center">
-  <img src="../images/knn.png">
+  <img src="https://github.com/vickyli1015/Handedness-Prediction/blob/main/images/knn.png">
   </p>
 
 
