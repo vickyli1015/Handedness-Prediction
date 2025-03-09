@@ -118,7 +118,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 <h4>Support Vector Classifier (SVC)</h4>
   <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying <b>linear</b>, <b>poly</b>, <b>rbf</b>, <b>sigmoid</b> kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
 
-  ![](knn.png)
+  <iframe src="knn.png" frameBorder=0></iframe>
 
 
   <p>where the kernel coefficient `alpha` controls the influence of each training sample on the decision boundary and is the bias term <b>c</b> that shifts the data up or down.
