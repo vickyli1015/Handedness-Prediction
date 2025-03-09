@@ -67,9 +67,107 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <hr>
 
-<h2>Methods</h2>
+<h2>Methods</h2
 
 I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster.
+
+
+    <p>Handedness can be viewed as binary, left or right-handed, as well as continuous based on the Edinburgh Handedness Index. This led us to explore two types of models: regression and classification.</p>
+    
+    <p>Both models utilize functional connectivity, which we calculated through partial correlation matrices for each subject. For the CA data, the correlation matrix was 718 by 718, corresponding to all possible pairs between 718 regions. For the All ICA and Matched ICA data, the correlation matrices were 300 by 300, corresponding to 300 regions used. We applied Fisher Z-transformation to normalize the correlations.</p>
+    
+    <h3>Classification</h3>
+    <p>For classification, we used a model that always predicts mode as our baseline. The balanced accuracy score was used for evaluation, with a baseline score of 0.5.</p>
+    
+    <p>Since left-handed people make up less than 10% of our dataset, we used the Synthetic Minority Oversampling Technique (SMOTE) to rebalance the dataset.</p>
+    
+    <h4>K-Nearest Neighbors (KNN) Classifier</h4>
+    <table>
+        <tr>
+            <th>Dataset</th>
+            <th>Number of Edges</th>
+            <th>Value of k</th>
+            <th>Accuracy</th>
+        </tr>
+        <tr>
+            <td>Matched ICA</td>
+            <td>60</td>
+            <td>3</td>
+            <td>1.00</td>
+        </tr>
+        <tr>
+            <td>CA Data</td>
+            <td>15</td>
+            <td>3</td>
+            <td>0.99</td>
+        </tr>
+        <tr>
+            <td>All ICA</td>
+            <td>5</td>
+            <td>3</td>
+            <td>0.95</td>
+        </tr>
+    </table>
+    
+    <h4>Support Vector Classifier (SVC)</h4>
+    <p>After testing different kernels, the sigmoid kernel was chosen for stability.</p>
+    <table>
+        <tr>
+            <th>Dataset</th>
+            <th>Number of Edges</th>
+            <th>Accuracy</th>
+        </tr>
+        <tr>
+            <td>Matched ICA</td>
+            <td>68</td>
+            <td>1.00</td>
+        </tr>
+        <tr>
+            <td>CA Data</td>
+            <td>72</td>
+            <td>1.00</td>
+        </tr>
+        <tr>
+            <td>All ICA</td>
+            <td>60</td>
+            <td>0.94</td>
+        </tr>
+    </table>
+    
+    <h3>Regression</h3>
+    <p>For regression, we aimed to predict handedness as a continuous variable ranging from -100 to +100. The evaluation technique used was Root Mean Squared Error (RMSE).</p>
+    
+    <h4>K-Nearest Neighbors Regressor</h4>
+    <table>
+        <tr>
+            <th>Dataset</th>
+            <th>Edges</th>
+            <th>k</th>
+            <th>RMSE</th>
+        </tr>
+        <tr>
+            <td>Matched ICA</td>
+            <td>130</td>
+            <td>4</td>
+            <td>20.9</td>
+        </tr>
+        <tr>
+            <td>CA Data</td>
+            <td>50</td>
+            <td>4</td>
+            <td>17.8</td>
+        </tr>
+        <tr>
+            <td>All ICA</td>
+            <td>40</td>
+            <td>10</td>
+            <td>38.13</td>
+        </tr>
+    </table>
+    
+    <h4>Spectral Embedding</h4>
+    <p>Spectral Embedding was applied to reduce dimensionality, followed by Principal Component Analysis and linear regression to predict handedness scores.</p>
+
 
 <hr>
 
