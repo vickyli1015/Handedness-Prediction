@@ -36,6 +36,8 @@ Mentors: Armin Schwartzman, Gabriel Riegner
       <li> here we can put the interative plot/plot that show how ICA parcellation look like
     </ul>
   </li>
+</ul>
+<ul>
   <li><b>CA Parcellation (718 Regions):</b>
     <ul>
       <li>Divides the brain into <b>specific anatomical areas</b> (left vs. right hemisphere).</li>
