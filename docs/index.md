@@ -212,7 +212,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>We employed all the models to the three datasets: All ICA, Matched ICA, and CA. We ran each model 500 times on different train-test splits to ensure consistent results.</p>
   
   <h4>Comparison of Classification Models</h4>
-  <p><img src="class_ana.png" alt="Classification Model Comparison"></p>
+  <p>Comparison of Classification Models using 60 edges total, across different datasets.<img src="class_ana.png" alt="Classification Model Comparison"></p>
   
   <p>On All ICA data, the KNN model slightly outperformed the SVC model with an average balanced accuracy of 0.95 compared to 0.94 for SVC. Both models significantly outperformed the baseline. On Matched ICA data, both KNN and SVC achieved 100% balanced accuracy. For the CA dataset, which separated data by hemispheres and included subcortical regions, both models performed similarly with 99% balanced accuracy.</p>
   <p><img src="acc_diff_thresh.png" alt=""></p>
