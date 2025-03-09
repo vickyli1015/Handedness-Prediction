@@ -228,19 +228,23 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <h4>Results After Hierarchical Clustering & Permutation Testing</h4>
   <table>
       <tr>
+          <th>Dataset</th>
           <th>Number of Edges</th>
           <th>Balanced Accuracy</th>
       </tr>
       <tr>
-          <td>ICA Matched - 16</td>
+          <td>Matched ICA</td>
+          <td>16</td>
           <td>0.976</td>
       </tr>
       <tr>
-          <td>CA - 8</td>
+          <td>CA</td>
+          <td>8</td>
           <td>0.955</td>
       </tr>
       <tr>
-          <td>All ICA - 57</td>
+          <td>All ICA</td>
+          <td>57</td>
           <td>0.937</td>
       </tr>
   </table>
@@ -258,10 +262,10 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>The Brain Region Views 1 is a view from above, while the other is the view from the back of the brain. The highlighted areas are present towards the front of the brain as well as towards the back. </p>
   
   <h3>Regression Model</h3>
-  <p>Consistently we saw that the regions towards the back of the brain the occipital lobe as well as in the cerebellum seem to be important to our classification.
+  <p>Consistently we saw that the regions towards the back of the brain, the occipital lobe as well as in the cerebellum seem to be important to our classification.
 </p>
   <p><img src="regression_analysis.png" alt=""></p>
-  <p>Our regression model varied in results, the performance of the Spectral Embedding as well as KNN regressor worked well on our Matched ICA and CA datasets. The performance of the two models is comparable. Both models tend to perform slightly better on the CA dataset compared to the Matched ICA dataset. Both of the models barely outperform the baseline model on the All ICA dataset, showing poor performance. </p>
+  <p>Our regression model varied in results, the performance of the Spectral Embedding as well as the KNN regressor worked well on our Matched ICA and CA datasets. The performance of the two models is comparable. Both models tend to perform slightly better on the CA dataset compared to the Matched ICA dataset. Both of the models barely outperform the baseline model on the All ICA dataset, showing poor performance. </p>
 
 
 <hr>
