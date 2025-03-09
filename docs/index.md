@@ -117,9 +117,9 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   
 <h4>Support Vector Classifier (SVC)</h4>
   <p>Then we implemented a Support Vector Classifier (SVC), and performed a similar grid search of the hyperparameters. After trying ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’ kernels, only the sigmoid kernel produced reliably stable results, so it was chosen for the model.</p>
-  \(
+  \[
   K(x,y)=tanh(\alpha⋅x^Ty+c)
-\)
+\]
   
   <p>After testing different kernels, the sigmoid kernel was chosen for stability.</p>
   <table>
