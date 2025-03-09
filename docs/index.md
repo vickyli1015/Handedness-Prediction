@@ -199,6 +199,10 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>Our second model is Spectral Embedding, which works by computing the graph Laplacian of a similarity matrix derived from the data, performing an eigenvalue decomposition, and selecting the eigenvectors associated with the smallest eigenvalues. These eigenvectors form the new lower-dimensional coordinates for the data, capturing the essential structure of the dataset in fewer dimensions. Since the Laplacian matrix depends on the similarity matrix, we have to apply it to the whole dataset rather than splitting it into a train and test set. We applied spectral embedding to reduce our dimensionality to just one or two dimensions. When Spectral embedding reduced our data to two dimensions, Principal Component Analysis was used to further reduce it to a single dimension and then apply linear regression where x are spectrally embedded values, while y are handedness scores.
 </p>
 
+<p align="center">
+<img src="Spectral_Embedding_CA.png" alt="Spectral Embedding">
+</p>
+
 
 <hr>
 
@@ -208,9 +212,12 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <p>We employed all the models to the three datasets: All ICA, Matched ICA, and CA. We ran each model 500 times on different train-test splits to ensure consistent results.</p>
   
   <h4>Comparison of Classification Models</h4>
-  <p><img src="images/classification_comparison.png" alt="Classification Model Comparison"></p>
+  <p><img src="class_ana.png" alt="Classification Model Comparison"></p>
   
   <p>On All ICA data, the KNN model slightly outperformed the SVC model with an average balanced accuracy of 0.95 compared to 0.94 for SVC. Both models significantly outperformed the baseline. On Matched ICA data, both KNN and SVC achieved 100% balanced accuracy. For the CA dataset, which separated data by hemispheres and included subcortical regions, both models performed similarly with 99% balanced accuracy.</p>
+  <p><img src="acc_diff_thresh.png" alt=""></p>
+
+  
   
   <h4>Effect of Edge Count on Performance</h4>
   <p>We examined how the number of edges affected performance. CA performed better with fewer edges compared to Matched ICA. Matched ICA caught up and eventually outperformed CA, but over time, both datasets performed similarly.</p>
@@ -239,13 +246,20 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   </table>
   
   <h4>Key Regions for Classification</h4>
-  <p>CA data: <img src="images/ca_regions.png" alt="CA Regions"></p>
-  <p>Matched ICA data: The important regions are centered towards the back in the cerebellum and occipital regions.</p>
-  <p>All ICA data: The regions are more evenly spread throughout the brain, but with a cluster towards the back.</p>
-  <p><img src="images/brain_views.png" alt="Brain Region Views"></p>
+  <p>CA data: <img src="brain_plot_1.png" alt="Matched ICA. In the matched ICA result, the centroids of the regions important for classification tend to be towards the back in the cerebellum and occipital regions."></p>
+  <p>CA data: <img src="brain_plot_2.png" alt="All ICA. In all ICA data, the regions are present more evenly spread out throughout the brain, however, there does seem to be a cluster towards the back of the brain."></p>
+
+  <p>These regions are harder to visualize in the CA data, since some of them are subcortical, the cortical regions look as follows:
+</p>
+  <p><img src="brain_plot_3.png" alt="Brain Region Views 1"></p>
+  <p><img src="brain_plot_4.png" alt="Brain Region Views 2"></p>
+  <p>The Brain Region Views 1 is a view from above, while the other is the view from the back of the brain. The highlighted areas are present towards the front of the brain as well as towards the back. </p>
   
   <h3>Regression Model</h3>
-  <p>Our regression models showed varied results. Spectral Embedding and KNN Regressor performed well on Matched ICA and CA datasets, with comparable performance. Both models performed slightly better on the CA dataset than Matched ICA. However, both models barely outperformed the baseline on the All ICA dataset, indicating poor performance.</p>
+  <p>Consistently we saw that the regions towards the back of the brain the occipital lobe as well as in the cerebellum seem to be important to our classification.
+</p>
+  <p><img src="regression_analysis.png" alt=""></p>
+  <p>Our regression model varied in results, the performance of the Spectral Embedding as well as KNN regressor worked well on our Matched ICA and CA datasets. The performance of the two models is comparable. Both models tend to perform slightly better on the CA dataset compared to the Matched ICA dataset. Both of the models barely outperform the baseline model on the All ICA dataset, showing poor performance. </p>
 
 
 <hr>
