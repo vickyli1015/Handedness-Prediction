@@ -27,7 +27,7 @@ From the same study, we used restricted data on handedness. Handedness is assess
 
 <p>· Doing Fine Motor Tasks:  writing, drawing, throwing, threading a needle, etc.</p>
 
-· Using Eating & Kitchen Tools:  Knife (without fork), Spoon, Knife with fork
+<p>· Using Eating & Kitchen Tools:  Knife (without fork), Spoon, Knife with fork</p>
 
 When we split data into left and right-handed people, we discovered that our data consists of 12 left-handed people and 153 right-handed people for CA Data and ICA Matched Data. In all ICA data, there are 912 right-handed people, 88 left-handed people, and 3 ambidextrous persons.
 
