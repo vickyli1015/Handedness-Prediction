@@ -69,9 +69,6 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <h2>Methods</h2>
 
-  <p>I think here we can put the plot of the correlation matrice generation process we use for the poster, as well as the process diagram we have in the poster. (will be removed in final version)</p>
-
-
   <p>Handedness can be viewed as binary, left or right-handed, as well as continuous based on the Edinburgh Handedness Index. This led us to explore two types of models: regression and classification.</p>
     
   <p>Both models utilize functional connectivity, which we calculated through partial correlation matrices for each subject. For the CA data, the correlation matrix was 718 by 718, corresponding to all possible pairs between 718 regions. For the All ICA and Matched ICA data, the correlation matrices were 300 by 300, corresponding to 300 regions used. We applied Fisher Z-transformation to normalize the correlations.</p>
