@@ -211,7 +211,6 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 <h3>Classification</h3>
   <p>We employed all the models to the three datasets: All ICA, Matched ICA, and CA. We ran each model 500 times on different train-test splits to ensure consistent results.</p>
   
-  <h4>Comparison of Classification Models</h4>
   <p>Comparison of Classification Models using 60 edges total, across different datasets.<img src="class_ana.png" alt="Classification Model Comparison"></p>
   
   <p>On All ICA data, the KNN model slightly outperformed the SVC model with an average balanced accuracy of 0.95 compared to 0.94 for SVC. Both models significantly outperformed the baseline. On Matched ICA data, both KNN and SVC achieved 100% balanced accuracy. For the CA dataset, which separated data by hemispheres and included subcortical regions, both models performed similarly with 99% balanced accuracy.</p>
@@ -271,8 +270,31 @@ Mentors: Armin Schwartzman, Gabriel Riegner
 
 <hr>
 
+<h2>Discussion</h2>
+
+<p>Our results show that the Matched ICA and CA datasets have similar performance, but their performance differs significantly from that of the whole subject pool. The similar performance of ICA Matched and CA data was an unexpected outcome, as we predicted that parcellations recognizing hemispheres would be important for predicting handedness. However, it appears that this is not the case. We also note that the CA dataset, which divides brain regions by hemispheres, performs just as well with less information compared to the model trained on the Matched ICA dataset. This suggests that while the presence of lateralization may be useful in predicting handedness, it is not vital. There seems to be a broader brain connectivity pattern that represents handedness, regardless of lateralization.</p>
+    
+<p>Additionally, the performance of both regression and classification models on the All ICA dataset was significantly worse than on the other two datasets, which are subsets of the All ICA data. We hypothesize that individuals in the subset have higher-quality data because they were selected based on having undergone more scans than the majority of the dataset. These individuals may be better suited for resting-state fMRI (rfMRI).</p>
+
+<p>Our hierarchical analysis revealed that many brain regions are meaningful for prediction. These regions are distributed throughout the brain, rather than being localized specifically to the motor area. We found that several regions in the occipital lobe and cerebellum were useful for the model’s prediction. This was a surprising finding, as most prior research (e.g., Pool et al., 2015) has focused on areas within the primary motor cortex. That being said, our exploration of regions was quite preliminary, and further hypothesis testing would be needed to establish which regions are specifically predictive of handedness. For now, the regions we've identified work well for prediction, but it remains unclear how closely they are tied to handedness or whether there are confounders that influence the performance of our model. This remains an area for future exploration.</p>
+
+<p>The limitations of our model are also influenced by the size of the dataset. Left-handed individuals make up less than 10% of our dataset, which is a very small sample size. This sample may not be representative of the broader left-handed population. While our model performs well on the current datasets, it is important to acknowledge that our sample may be too small to accurately reflect the overall pattern in the data. It is possible that the effectiveness of our model could be due to a fortunate sample that highlights differences between left- and right-handed individuals. If we were to sample 900 more left-handed individuals, the data might not exhibit these patterns, and the groups could be indistinguishable. This is another area of future research.</p>
+
 <h2>Conclusion</h2>
+    <p>Overall, we achieved classification accuracies ranging from 0.95 to 1.00 on all datasets using the Support Vector Classifier with a sigmoid kernel. While separating the data by hemispheres can yield high accuracies with fewer features, it is not essential for achieving a high accuracy score. This suggests that handedness is represented not only by hemispheres but also by larger brain connectivity patterns. The high performance of our models indicates that handedness can be predicted, but further research is needed to identify which brain regions and features are most useful for the model. Additionally, a major limitation is the size and imbalance of the dataset, which prevents us from confidently asserting that these results are generalizable to the broader population.</p>
+
 
 <hr>
 
 <h2>Reference</h2>
+<ul>
+    <li>Pool, E.-M., Rehme, A. K., Eickhoff, S. B., Fink, G. R., & Grefkes, C. (2015). Functional resting-state connectivity of the human motor network: Differences between right- and left-handers. <em>NeuroImage, 109</em>, 298–306. https://doi.org/10.1016/j.neuroimage.2015.01.034</li>
+    <li>Pujol, J., Deus, J., Losilla, J. M., & Capdevila, A. (1999). Cerebral lateralization of language in normal left-handed people studied by functional MRI. <em>Neurology, 52</em>(5), 1038–1043. https://doi.org/10.1212/wnl.52.5.1038</li>
+    <li>Meszlényi, R. J., Buza, K., & Vidnyánszky, Z. (2017). Resting State fMRI Functional Connectivity-Based Classification Using a Convolutional Neural Network Architecture. <em>Frontiers in neuroinformatics, 11</em>, 61. https://doi.org/10.3389/fninf.2017.00061</li>
+    <li>Van Essen, D. C., Smith, S. M., Barch, D. M., Behrens, T. E., Yacoub, E., Ugurbil, K., & WU-Minn HCP Consortium (2013). The WU-Minn Human Connectome Project: an overview. <em>NeuroImage, 80</em>, 62–79. https://doi.org/10.1016/j.neuroimage.2013.05.041</li>
+    <li>Glasser, M.F., Sotiropoulos, S.N., Wilson, J.A., Coalson, T.S., Fischl, B., Andersson, J.L., Xu, J., Jbabdi, S., Webster, M., Polimeni, J.R., Van Essen, D.C., & Jenkinson, M. (2013). The minimal preprocessing pipelines for the Human Connectome Project. <em>NeuroImage, 80</em>, 105-124.</li>
+    <li>Filippini, N., MacIntosh, B.J., Hough, M.G., Goodwin, G.M., Frisoni, G.B., Smith, S.M., Matthews, P.M., Beckmann, C.F., & Mackay, C.E. (2009). Distinct patterns of brain activity in young carriers of the APOE-e4 allele. <em>Proc Natl Acad Sci USA (PNAS), 106</em>, 7209-7214.</li>
+    <li>Ji, J. L., Spronk, M., Kulkarni, K., Repovš, G., Anticevic, A., & Cole, M. W. (2019). Mapping the human brain's cortical-subcortical functional network organization. <em>NeuroImage, 185</em>, 35-57. https://doi.org/10.1016/j.neuroimage.2018.10.006</li>
+    <li>Oldfield, R. C. (1971). The assessment and analysis of handedness: the Edinburgh inventory. <em>Neuropsychologia, 9</em>(1), 97–113. https://doi.org/10.1016/0028-3932(71)90067-4</li>
+</ul>
+
