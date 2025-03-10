@@ -118,7 +118,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
   <img src="knn.png" alt="">
   </p>
 
-  <p>where the kernel coefficient `alpha` controls the influence of each training sample on the decision boundary and is the bias term <b>c</b> that shifts the data up or down.
+  <p>where the kernel coefficient <b>alpha</b> controls the influence of each training sample on the decision boundary and is the bias term <b>c</b> that shifts the data up or down.
 </p>
 
   <p>In the sigmoid kernel, the similarity between two data points is computed using the hyperbolic tangent function <b>tanh</b>. The kernel function scales and possibly shifts the dot product of the two points <b>x</b> and <b>y</b>.
