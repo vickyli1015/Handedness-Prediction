@@ -12,7 +12,7 @@ Mentors: Armin Schwartzman, Gabriel Riegner
           <th>Report 📋 </th>
           <th>Code 🌐 </th>
       </tr>
-<\table>
+</table>
 
 
 <h2>Introduction</h2>
