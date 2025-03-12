@@ -3,17 +3,15 @@
 By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; 
 Mentors: Armin Schwartzman, Gabriel Riegner
 
-| [Poster](https://drive.google.com/file/d/1C-OPMyQ4RCrFGj99aW1WQ5s7aOevUeIV/view?usp=drive_link) 🖼️  | [Report](https://drive.google.com/file/d/13aa3eq-qRTH6Y2kCAgb6hVWbtOo411hR/view?usp=drive_link) 📋 | [Github](https://github.com/vickyli1015/Public-DSC180B-Functional-Connectivity-Project.git) 🌐 |
-|----------|----------|----------|
-
+<center>
 <table>
       <tr>
-          <th>Poster 🖼️ </th>
-          <th>Report 📋 </th>
-          <th>Code 🌐 </th>
+          <th><a href="https://drive.google.com/file/d/1C-OPMyQ4RCrFGj99aW1WQ5s7aOevUeIV/view?usp=drive_link" >Poster </a> 🖼️ </th>
+          <th><a href="https://drive.google.com/file/d/13aa3eq-qRTH6Y2kCAgb6hVWbtOo411hR/view?usp=drive_link">Report </a> 📋 </th>
+          <th><a href="https://github.com/vickyli1015/Public-DSC180B-Functional-Connectivity-Project.git">Code </a> 🌐 </th>
       </tr>
 </table>
-
+</center>
 
 <h2>Introduction</h2>
 
