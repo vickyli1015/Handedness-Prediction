@@ -3,6 +3,9 @@
 By: Vicky Li, Anastasiya Markova, Zhuoxuan Ju; 
 Mentors: Armin Schwartzman, Gabriel Riegner
 
+| [Poster](https://drive.google.com/file/d/1C-OPMyQ4RCrFGj99aW1WQ5s7aOevUeIV/view?usp=drive_link) 🖼️  | [Report](https://drive.google.com/file/d/13aa3eq-qRTH6Y2kCAgb6hVWbtOo411hR/view?usp=drive_link) 📋 | [Github](https://github.com/vickyli1015/Public-DSC180B-Functional-Connectivity-Project.git) 🌐 |
+|----------|----------|----------|
+
 
 <h2>Introduction</h2>
 
